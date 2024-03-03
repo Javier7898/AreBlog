@@ -164,21 +164,21 @@ nav a:hover {
 }
 
 .main-banner #imgban3 {
-    background-image: url(banner3.png);
+    background-image: url(banner/banner3.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .main-banner #imgban2 {
-    background-image: url(banner2.jpg);
+    background-image: url(banner/banner2.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .main-banner #imgban1 {
-    background-image: url(banner1.jpg);
+    background-image: url(banner/banner1.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -203,7 +203,7 @@ nav a:hover {
 
 .imgbanbtn-prev {
     left: 5px;
-    background-image: url(arrow-left.png);
+    background-image: url(banner/arrow-left.png);
     background-size: 60%;
     background-position: center;
     background-repeat: no-repeat;
@@ -211,7 +211,7 @@ nav a:hover {
 
 .imgbanbtn-next {
     right: 5px;
-    background-image: url(arrow-right.png);
+    background-image: url(banner/arrow-right.png);
     background-size: 60%;
     background-position: center;
     background-repeat: no-repeat;
