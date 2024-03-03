@@ -92,29 +92,59 @@ a:hover {
     object-fit: contain;
 }
 .Text_wrap{
-   position: absolute; /* Set text container to absolute */
-    bottom: 0; /* Align it to the bottom */
-    width: 100%; /* Occupy full width of parent */
-    text-align: center; /* Center align text */
+   position: absolute; 
+    bottom: 0; 
+    width: 100%;
+    text-align: center;
 }
 .Text_wrap p{
-    font-size: 1.2rem; /* Atur ukuran font relatif */
+    font-size: 1.2rem;
 
 }
-.berita1{
-    display: flex;
+.title{
+    font-size: 25px;
+    margin-left: 10px;
+    
+}
+.Berita{
+    float: left;
+    text-align: justify;
+}
+.Berita img{
+    float: left;
+    padding: 20px 20px;
+    margin-right: 20px;
+    width: 400;
+    height: 300;
     position: relative;
-    justify-content: center;
-    align-items: center;
+    object-fit:fill;
+
 }
 
-.sticky
-{
+.width_70{
+    width: 70%;
+    float: left;
+}
+
+.sticky {
+  background-image: url(sticky_ads.jpg);
   position: sticky;
-  font-size: 1.4em;
-  padding: 10px;
-  bottom: 0px;
-  background-color: aquamarine;
+  font-size: 1em;
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 450px;
+  height: 700px;
+  top: 500px;
+
+  
+}
+
+.parent_sticky {
+    width: 450px;
+    height: 1500px;
+    float: right;
+    position: relative;
 }
 
 .main-banner{
