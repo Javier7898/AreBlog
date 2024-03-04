@@ -103,7 +103,7 @@ nav a:hover {
 }
 .title{
     font-size: 25px;
-    margin-left: 25px;
+    margin-left: 10px;
     
 }
 .Berita{
@@ -138,13 +138,30 @@ nav a:hover {
     text-decoration: none;
     color: blue;
 }
-.sticky
-{
+.width_70{
+    width: 70%;
+    float: left;
+}
+
+.sticky {
+  background-image: url(sticky_ads.jpg);
   position: sticky;
-  font-size: 1.4em;
-  padding: 10px;
-  bottom: 0px;
-  background-color: aquamarine;
+  font-size: 1em;
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 450px;
+  height: 700px;
+  top: 500px;
+
+  
+}
+
+.parent_sticky {
+    width: 450px;
+    height: 1500px;
+    float: right;
+    position: relative;
 }
 
 .main-banner{
