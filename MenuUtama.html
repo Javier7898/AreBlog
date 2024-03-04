@@ -13,7 +13,12 @@
         <ul>
             <li>
                 <a href="MenuUtama.html">Home</a>
-                <a href="Login.html">Login</a>
+                <span id="loginSpan">
+                    <a href="Login.html">Login</a>
+                </span>
+                <span id="welcomeSpan" style="display:none;">
+                    Welcome, <span id="welcomeMessage"></span>
+                </span> <!-- Ini untuk menampilkan pesan selamat datang -->
             </li>
         </ul>
     </nav>
@@ -68,7 +73,7 @@
     <div class="parent_sticky">
     <div class="sticky"></div>
     </div>
-
+    
     <script>
         var bannerStatus = 1;
         var bannerTimer = 4000;
@@ -173,7 +178,29 @@
             event.preventDefault();
         }
     }
+    
+    // Fungsi untuk mengubah tampilan login menjadi welcome
+function updateLoginStatus(username) {
+    var loginSpan = document.getElementById("loginSpan");
+    var welcomeSpan = document.getElementById("welcomeSpan");
+    var welcomeMessage = document.getElementById("welcomeMessage");
+    
+    if (username) {
+        loginSpan.style.display = "none"; // Sembunyikan "Login"
+        welcomeSpan.style.display = "inline"; // Tampilkan "Welcome"
+        welcomeMessage.innerText = username; // Isi pesan selamat datang dengan nama pengguna
+    } else {
+        loginSpan.style.display = "inline"; // Tampilkan "Login"
+        welcomeSpan.style.display = "none"; // Sembunyikan "Welcome"
+    }
+}
 
-</script>    
+// Periksa apakah ada nama pengguna tersimpan di sessionStorage saat halaman dimuat
+window.onload = function() {
+    var username = sessionStorage.getItem('username');
+    updateLoginStatus(username);
+};
+
+</script>   
 </body>
 </html>

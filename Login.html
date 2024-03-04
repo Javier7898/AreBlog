@@ -24,7 +24,7 @@
             <div class="input-group">
                 <div class="input-field" id="nameField">
                     <i class="fa-solid fa-user"></i>
-                    <input type="text" placeholder="Username">
+                    <input type="text" id="usernameInput" placeholder="Username">
                 </div>
 
                 <div class="input-field" id="emailField">
@@ -64,6 +64,8 @@ signinBtn.onclick = function(){
             let passwordInput = document.querySelector('.input-field input[type="password"]');
             
             if (nameInput.value !== '' && passwordInput.value !== '') {
+                // Simpan nama pengguna di sessionStorage
+                sessionStorage.setItem('username', nameInput.value);
                 window.location.href = "MenuUtama.html";
             } else {
                 alert("Please fill in all fields.");
@@ -90,6 +92,8 @@ signupBtn.onclick = function(){
             let passwordInput = document.querySelector('.input-field input[type="password"]');
             
             if (nameInput.value !== '' && passwordInput.value !== '') {
+                // Simpan nama pengguna di sessionStorage
+                sessionStorage.setItem('username', nameInput.value);
                 window.location.href = "MenuUtama.html";
             } else {
                 alert("Please fill in all fields.");
