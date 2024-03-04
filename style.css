@@ -43,8 +43,8 @@ nav ul li a{
     border-radius: 3px;
     text-transform: uppercase;
 }
-a.active,
-a:hover {
+nav a.active,
+nav a:hover {
     text-decoration:overline;
     transition: .5s;
 }
@@ -113,14 +113,31 @@ a:hover {
 .Berita img{
     float: left;
     padding: 20px 20px;
-    margin-right: 20px;
-    width: 400;
-    height: 300;
-    position: relative;
-    object-fit:fill;
-
+}
+.Berita p{
+    font-size: 15px;
+}
+.Link-pindah {
+    float: left;
+    width: calc(33.33% - 20px); 
+    margin: 0 20px 20px 0; 
+    text-align: center; 
 }
 
+.Link-pindah img {
+    max-width: 100%; 
+    height: auto; 
+}
+
+.Link-pindah p {
+    margin-top: 5px; 
+    font-size: 15px;
+}
+
+.Link-pindah a{
+    text-decoration: none;
+    color: blue;
+}
 .width_70{
     width: 70%;
     float: left;
@@ -165,21 +182,21 @@ a:hover {
 }
 
 .main-banner #imgban3 {
-    background-image: url(banner3.png);
+    background-image: url(banner/banner3.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .main-banner #imgban2 {
-    background-image: url(banner2.jpg);
+    background-image: url(banner/banner2.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .main-banner #imgban1 {
-    background-image: url(banner1.jpg);
+    background-image: url(banner/banner1.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -204,7 +221,7 @@ a:hover {
 
 .imgbanbtn-prev {
     left: 5px;
-    background-image: url(arrow-left.png);
+    background-image: url(banner/arrow-left.png);
     background-size: 60%;
     background-position: center;
     background-repeat: no-repeat;
@@ -212,7 +229,7 @@ a:hover {
 
 .imgbanbtn-next {
     right: 5px;
-    background-image: url(arrow-right.png);
+    background-image: url(banner/arrow-right.png);
     background-size: 60%;
     background-position: center;
     background-repeat: no-repeat;
