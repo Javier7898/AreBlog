@@ -1,43 +1,49 @@
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>AreBlog</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body ng-app="blogApp" ng-controller="blogController">
-        <nav>
-            <a style="text-decoration: none; " href="MenuUtama.html"><label class="logo">AreBlog</label></a>
-            <ul>
-                <li>
-                    <a href="MenuUtama.html">Home</a>
-                    <a href="#">Logout</a>
-                </li>
-            </ul>
-        </nav>
-        
-        <div class="trend" id="textbox">
-            <a href="https://www.apple.com/iphone/?cid=oas-us-domains-iphone.com"><img src="img/iphone.jpg" alt="iklan"></a>
-            <div class="Text_wrap">
-            <p>Join AreBlog Premium.<span></span><span><a href="MenuUtama.html">Disini</a></span></span></p>
-            </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AreShop</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body ng-app="blogApp" ng-controller="blogController">
+    <nav>
+        <label class="logo">AreBlog</label>
+        <ul>
+            <li>
+                <a href="MenuUtama.html">Home</a>
+                <span id="loginSpan">
+                    <a href="Login.html">Login</a>
+                </span>
+                <span id="welcomeSpan" style="display:none;">
+                    Welcome, <span id="welcomeMessage"></span>
+                </span> <!-- Ini untuk menampilkan pesan selamat datang -->
+            </li>
+        </ul>
+    </nav>
+
+    <div class="trend" id="textbox">
+        <a href="https://www.apple.com/iphone/?cid=oas-us-domains-iphone.com"><img src="img/iphone.jpg" alt="iklan"></a>
+        <div class="Text_wrap">
+        <p>Join AreBlog Premium.<span></span><span><a href="MenuUtama.html">Disini</a></span></span></p>
         </div>
-        
-        <div class="main-banner" id="main-banner">
-            <!-- <div class="imgbanbtn imgbanbtn-prev" id="imgbanbtn-prev"></div> -->
-            <div class="imgban" id="imgban3">
-                
-            </div>
-            <div class="imgban" id="imgban2">
-                
-            </div>
-            <div class="imgban" id="imgban1">
-                
-            </div>
-            <!-- <div class="imgbanbtn imgbanbtn-next" id="imgbanbtn-next"></div> -->
+    </div>
+    
+    <div class="main-banner" id="main-banner">
+        <!-- <div class="imgbanbtn imgbanbtn-prev" id="imgbanbtn-prev"></div> -->
+        <div class="imgban" id="imgban3">
+            
         </div>
-        <br>
+        <div class="imgban" id="imgban2">
+            
+        </div>
+        <div class="imgban" id="imgban1">
+            
+        </div>
+        <!-- <div class="imgbanbtn imgbanbtn-next" id="imgbanbtn-next"></div> -->
+    </div>
+    <br>
 
         <div class="judul">Pemilihan Calon Presiden</div>
         <div class="width_70">
@@ -175,7 +181,30 @@
             }
             
         }
-    </script>
+
     
-    </body>
+    // Fungsi untuk mengubah tampilan login menjadi welcome
+function updateLoginStatus(username) {
+    var loginSpan = document.getElementById("loginSpan");
+    var welcomeSpan = document.getElementById("welcomeSpan");
+    var welcomeMessage = document.getElementById("welcomeMessage");
+    
+    if (username) {
+        loginSpan.style.display = "none"; // Sembunyikan "Login"
+        welcomeSpan.style.display = "inline"; // Tampilkan "Welcome"
+        welcomeMessage.innerText = username; // Isi pesan selamat datang dengan nama pengguna
+    } else {
+        loginSpan.style.display = "inline"; // Tampilkan "Login"
+        welcomeSpan.style.display = "none"; // Sembunyikan "Welcome"
+    }
+}
+
+// Periksa apakah ada nama pengguna tersimpan di sessionStorage saat halaman dimuat
+window.onload = function() {
+    var username = sessionStorage.getItem('username');
+    updateLoginStatus(username);
+};
+
+</script>   
+</body>
 </html>
