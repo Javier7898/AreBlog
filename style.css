@@ -18,6 +18,9 @@ nav{
     border-bottom: 0.1px solid black; 
     
 }
+.no-decoration{
+    text-decoration: none;
+}
 .logo{
     font-size: 3vh;
     font-weight: bold;
@@ -119,9 +122,14 @@ nav a:hover {
 }
 .Link-pindah {
     float: left;
+    object-fit: contain;
     width: calc(33.33% - 20px); 
     margin: 0 20px 20px 0; 
+    height: auto;
+    width: 500px;
     text-align: center; 
+    position: relative;
+    padding-left: 20px;
 }
 
 .Link-pindah img {
@@ -159,7 +167,7 @@ nav a:hover {
 
 .parent_sticky {
     width: 450px;
-    height: 1500px;
+    height: 150%;
     float: right;
     position: relative;
 }
@@ -233,4 +241,11 @@ nav a:hover {
     background-size: 60%;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+.judul {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bolder;
+    margin: 1rem;
 }
