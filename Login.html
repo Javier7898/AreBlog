@@ -7,7 +7,16 @@
     <link rel="stylesheet" href="styleLogin.css">
     <script src="https://kit.fontawesome.com/bd99fd6fa8.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body ng-app="blogApp" ng-controller="blogController">
+    <!-- Navbar -->
+    <nav>
+        <label class="logo">AreBlog</label>
+        <ul>
+            <li>
+                <a href="MenuUtama.html">Home</a>
+            </li>
+        </ul>
+    </nav>
 <div class="container">
     <div class="form-box">
         <h1 id="title">Sign Up</h1>
@@ -18,7 +27,7 @@
                     <input type="text" placeholder="Username">
                 </div>
 
-                <div class="input-field">
+                <div class="input-field" id="emailField">
                     <i class="fa-solid fa-envelope"></i>
                     <input type="email" placeholder="Email">
                 </div>
@@ -40,21 +49,21 @@
 <script>
 let signupBtn = document.getElementById("signupBtn");
 let signinBtn = document.getElementById("signinBtn");
-let nameField = document.getElementById("nameField");
+let emailField = document.getElementById("emailField");
 let title = document.getElementById("title");
 
 signinBtn.onclick = function(){
-    let nameInput = document.querySelector('.input-field input[type="text"]');
-        nameInput.value = ''; // Reset input value to empty string
-        nameField.style.display = "none"; // Hide the name field
+    let emailInput = document.querySelector('.input-field input[type="email"]');
+        emailInput.value = ''; // Reset input value to empty string
+        emailField.style.display = "none"; // Hide the email field
         title.innerHTML = "Sign In"; // Change the title
         
         if (!signinBtn.classList.contains("disable")) {
             
-            let emailInput = document.querySelector('.input-field input[type="email"]');
+            let nameInput = document.querySelector('.input-field input[type="text"]'); // Mengganti dari 'name' ke 'text'
             let passwordInput = document.querySelector('.input-field input[type="password"]');
             
-            if (emailInput.value !== '' && passwordInput.value !== '') {
+            if (nameInput.value !== '' && passwordInput.value !== '') {
                 window.location.href = "MenuUtama.html";
             } else {
                 alert("Please fill in all fields.");
@@ -67,9 +76,9 @@ signinBtn.onclick = function(){
 
 signupBtn.onclick = function(){
     if (!signupBtn.classList.contains("disable")) {
-        let nameFields = document.querySelectorAll('.input-field input[type="text"]');
+        let emailFields = document.querySelectorAll('.input-field input[type="email"]');
         let allFilled = true;
-        nameFields.forEach(function(field) {
+        emailFields.forEach(function(field) {
             if (field.value === '') {
                 allFilled = false;
                 return;
@@ -77,10 +86,10 @@ signupBtn.onclick = function(){
         });
 
         if (allFilled) {
-            let emailInput = document.querySelector('.input-field input[type="email"]');
+            let nameInput = document.querySelector('.input-field input[type="text"]');
             let passwordInput = document.querySelector('.input-field input[type="password"]');
             
-            if (emailInput.value !== '' && passwordInput.value !== '') {
+            if (nameInput.value !== '' && passwordInput.value !== '') {
                 window.location.href = "MenuUtama.html";
             } else {
                 alert("Please fill in all fields.");
@@ -92,8 +101,8 @@ signupBtn.onclick = function(){
         signupBtn.classList.remove("disable"); // Remove the "disable" class from the Sign Up button
         signinBtn.classList.add("disable"); // Add the "disable" class to the Sign In button
 
-        // Show the username field and change the title
-        nameField.style.display = "";
+        // Show the email field and change the title
+        emailField.style.display = "";
         title.innerHTML = "Sign Up";
 
         // Reset the layout of input fields
@@ -101,10 +110,6 @@ signupBtn.onclick = function(){
         inputGroup.style.gridTemplateRows = "auto auto auto"; // Reset the layout
     }
 }
-
-
-
-
 </script>
 </body>
 </html>
