@@ -1,7 +1,18 @@
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AreBlog</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <link rel="stylesheet" href="css/style.css">
-</head>
+<header>
+    <ul class="header-list">
+        <li class="filter-condition">
+            <span>View As a</span>
+            <select name="" id="select">
+                <option value="Default">Default</option>
+                <option value="LowToHigh">A - Z</option>
+                <option value="HighToLow">Z - A</option>
+            </select>
+        </li>
+        <li class="ContainerSearch">
+            <div class="search-box">
+                <input type="text" name="" id="search-item" placeholder="Cari Berita..." onkeyup="search()">
+                <button type="reset"></button>
+            </div>
+        </li>
+    </ul>
+</header>
