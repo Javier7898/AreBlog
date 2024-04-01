@@ -41,8 +41,8 @@ app.get('/Olimpiade', (req,res) => {
     res.render('BeritaOlimpiade', { title : 'Olimpiade'})
 });
 
-app.get('/', (req,res) => {
-    res.render('MenuUtama', { title : 'Pemilu'})
+app.get('/Presiden', (req,res) => {
+    res.render('BeritaPresiden', { title : 'Pemilu'})
 });
 
 app.get('/login', (req,res) => {
@@ -158,6 +158,13 @@ app.post("/resetpas", async (req, res) => {
         res.status(500).send("Internal Server Error");
     }
 });
+
+app.get('/', (req,res) => {
+    res.render('MenuUtama', { title : 'Utama'})
+});
+
+app.use(express.static('Public'))
+
 
 // Profile Page
 app.get("/profile", async (req, res) => {

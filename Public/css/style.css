@@ -34,6 +34,8 @@ body{
     margin: 0 auto;
     margin-top: 20px;
     width: 50%;
+    justify-content: center;
+    text-align: center;
 }
 
 .ContainerSearch {
@@ -138,6 +140,7 @@ nav a:hover {
     text-align: center;
     margin: 0 auto;
     border-radius: 2.5em;
+
 }
 
 .search-box input[type="text"] {
@@ -178,11 +181,13 @@ nav a:hover {
 }
 
 .user-card {
-    flex-direction: column;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    width: 100%;
+    max-width: 300px; /* Atur sesuai kebutuhan lebar maksimum kartu */
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .user-card .card-image img {
