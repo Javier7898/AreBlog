@@ -249,3 +249,79 @@ nav a:hover {
     font-weight: bolder;
     margin: 1rem;
 }
+
+/* CSS untuk komentar */
+.comments-section {
+    margin-top: 1925px;
+    margin-left: 20px;
+}
+
+.comments-section h1 {
+    font-family: "Calibri", sans-serif; /* Mengubah font family */
+    font-size: 40px; /* Mengubah ukuran font */
+    font-weight: bold; /* Mengubah tebal font */
+    color: #000000; /* Mengubah warna teks */
+    /* Tambahan gaya CSS lainnya */
+}
+
+#comments-container {
+    margin-top: 20px;
+    margin-right: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    
+}
+
+.comment {
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.comment:last-child {
+    margin-bottom: 0; /* Menghilangkan margin bawah pada komentar terakhir */
+}
+
+textarea {
+    width: calc(98% - 110px); /* Mengatur lebar textarea sehingga tombol masuk sejajar */
+    padding: 10px;
+    margin-top: 10px;
+    margin-right: 10px; /* Memberikan spasi antara textarea dan tombol */
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    display: inline-block; /* Membuat textarea tampil secara inline */
+    vertical-align: top; /* Mengatur posisi textarea ke atas */
+    resize: none; /* Mencegah pengguna untuk mengubah ukuran textarea */
+    
+}
+
+button {
+    padding: 10px 20px;
+    margin-top: 25px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    display: inline-block; /* Membuat tombol tampil secara inline */
+    vertical-align: top; /* Mengatur posisi tombol ke atas */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Opsional: Mengatur ukuran font untuk komentar */
+.comment,
+textarea,
+button {
+    font-size: 16px;
+}
+
+/* Opsional: Mengatur spasi antar elemen */
+.comments-section > * {
+    margin-bottom: 20px;
+}
