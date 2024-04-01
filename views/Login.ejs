@@ -1,119 +1,38 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="css/styleLogin.css">
-    <script src="https://kit.fontawesome.com/bd99fd6fa8.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/css/styleLogin.css">
 </head>
-<body ng-app="blogApp" ng-controller="blogController">
-    <!-- Navbar -->
-    <nav>
-        <label class="logo">AreBlog</label>
-        <ul>
-            <li>
-                <a href="/Presiden">Home</a>
-            </li>
-        </ul>
-    </nav>
-<div class="container">
-    <div class="form-box">
-        <h1 id="title">Sign Up</h1>
-        <form>
-            <div class="input-group">
-                <div class="input-field" id="nameField">
-                    <i class="fa-solid fa-user"></i>
-                    <input type="text" id="usernameInput" placeholder="Username">
-                </div>
-
-                <div class="input-field" id="emailField">
-                    <i class="fa-solid fa-envelope"></i>
-                    <input type="email" placeholder="Email">
-                </div>
-
-                <div class="input-field">
-                    <i class="fa-solid fa-lock"></i>
-                    <input type="password" placeholder="Password">
-                </div>
-                <p>Reset password <a href="#">Click Here!</a></p>
-            </div>
-            <div class="btn-field">
-                <button type="button" id="signupBtn">Sign Up</button>
-                <button type="button" id="signinBtn" class="disable">Sign In</button>
-            </div>
+<body>
+    <div class="form-container" id="login-form">
+        <h2>Login</h2>
+        <% if (messages.error) { %>
+          <div class="alert alert-danger" role="alert">
+              <%= messages.error %>
+          </div>
+      <% } %>
+        <form action="/Login" method="post">
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="email" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="password" required>
+            <a class="forgot" href="/resetpas">Forgot Password</a>
+          </div>
+          <button type="submit" class="submit-btn">Login</button>
         </form>
-    </div>
-</div>
-
-<script>
-let signupBtn = document.getElementById("signupBtn");
-let signinBtn = document.getElementById("signinBtn");
-let emailField = document.getElementById("emailField");
-let title = document.getElementById("title");
-
-signinBtn.onclick = function(){
-    let emailInput = document.querySelector('.input-field input[type="email"]');
-        emailInput.value = ''; // Reset input value to empty string
-        emailField.style.display = "none"; // Hide the email field
-        title.innerHTML = "Sign In"; // Change the title
-        
-        if (!signinBtn.classList.contains("disable")) {
-            
-            let nameInput = document.querySelector('.input-field input[type="text"]'); // Mengganti dari 'name' ke 'text'
-            let passwordInput = document.querySelector('.input-field input[type="password"]');
-            
-            if (nameInput.value !== '' && passwordInput.value !== '') {
-                // Simpan nama pengguna di sessionStorage
-                sessionStorage.setItem('username', nameInput.value);
-                window.location.href = "/Presiden";
-            } else {
-                alert("Please fill in all fields.");
-            }
-        } else {
-            signinBtn.classList.remove("disable"); // Remove the "disable" class from the Sign In button
-            signupBtn.classList.add("disable"); // Add the "disable" class to the Sign Up button
-        }
-}
-
-signupBtn.onclick = function(){
-    if (!signupBtn.classList.contains("disable")) {
-        let emailFields = document.querySelectorAll('.input-field input[type="email"]');
-        let allFilled = true;
-        emailFields.forEach(function(field) {
-            if (field.value === '') {
-                allFilled = false;
-                return;
-            }
-        });
-
-        if (allFilled) {
-            let nameInput = document.querySelector('.input-field input[type="text"]');
-            let passwordInput = document.querySelector('.input-field input[type="password"]');
-            
-            if (nameInput.value !== '' && passwordInput.value !== '') {
-                // Simpan nama pengguna di sessionStorage
-                sessionStorage.setItem('username', nameInput.value);
-                window.location.href = "/Presiden";
-            } else {
-                alert("Please fill in all fields.");
-            }
-        } else {
-            alert("Please fill in all name fields.");
-        }
-    } else {
-        signupBtn.classList.remove("disable"); // Remove the "disable" class from the Sign Up button
-        signinBtn.classList.add("disable"); // Add the "disable" class to the Sign In button
-
-        // Show the email field and change the title
-        emailField.style.display = "";
-        title.innerHTML = "Sign Up";
-
-        // Reset the layout of input fields
-        let inputGroup = document.querySelector('.input-group');
-        inputGroup.style.gridTemplateRows = "auto auto auto"; // Reset the layout
-    }
-}
-</script>
+        <p>Don't have an account? <a class="link" href="/Register">SignUp</a></p>
+      </div>
 </body>
+<script>
+  
+</script>
 </html>
+
