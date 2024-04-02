@@ -88,6 +88,7 @@ app.get('/PLTU', (req,res) => {
 
 app.get('/Timnas', (req,res) => {
     res.render('BeritaTimnas', { title : 'Timnas'})
+});
 
 app.get('/Register', (req,res) => {
     res.render('Register', { title : 'Login'})
