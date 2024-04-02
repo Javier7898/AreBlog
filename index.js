@@ -49,6 +49,46 @@ app.get('/login', (req,res) => {
     res.render('Login', { title : 'Login'})
 });
 
+
+app.get('/Emas', (req,res) => {
+    res.render('BeritaEmas', { title : 'Emas'})
+});
+
+app.get('/Gerhana', (req,res) => {
+    res.render('BeritaGerhana', { title : 'Gerhana'})
+});
+
+app.get('/IKN', (req,res) => {
+    res.render('BeritaIKN', { title : 'IKN'})
+});
+
+app.get('/Kebakaran', (req,res) => {
+    res.render('BeritaKebakaran', { title : 'Kebakaran'})
+});
+
+app.get('/Korupsi', (req,res) => {
+    res.render('BeritaKorupsi', { title : 'Korupsi'})
+});
+
+app.get('/Mudik', (req,res) => {
+    res.render('BeritaMudik', { title : 'Mudik'})
+});
+
+app.get('/Pangan', (req,res) => {
+    res.render('BeritaPangan', { title : 'Pangan'})
+});
+
+app.get('/Paskah', (req,res) => {
+    res.render('BeritaPangan', { title : 'Paskah'})
+});
+
+app.get('/PLTU', (req,res) => {
+    res.render('BeritaPLTU', { title : 'PLTU'})
+});
+
+app.get('/Timnas', (req,res) => {
+    res.render('BeritaTimnas', { title : 'Timnas'})
+
 app.get('/Register', (req,res) => {
     res.render('Register', { title : 'Login'})
 });
