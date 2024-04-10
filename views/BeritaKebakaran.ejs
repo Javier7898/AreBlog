@@ -16,10 +16,43 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio expedita fugiat alias dolores quae officiis voluptatem, adipisci consectetur labore magnam in, inventore sint quasi asperiores nemo exercitationem veritatis architecto provident tempore tenetur! Quas ipsa non voluptate? Sapiente, debitis? Eius dolore iusto culpa eum corrupti voluptas nesciunt voluptates beatae impedit error, earum maxime repudiandae, enim dolorem ipsum eveniet nulla quas reprehenderit expedita architecto? Provident, velit reprehenderit. Itaque sequi ullam corrupti recusandae exercitationem aliquam cum dolores deleniti totam, soluta qui eaque illum perferendis vel error perspiciatis. Ad temporibus debitis laudantium repudiandae ea non ab exercitationem aspernatur saepe corrupti! Veritatis corrupti ipsam, nostrum iste est perferendis odio quas? Dolorem, ratione sit officiis et pariatur doloribus earum nulla quia eligendi tempore distinctio enim rem dignissimos deleniti temporibus consectetur corrupti vitae quod explicabo, laudantium, quam fugiat voluptas eaque! Ratione repellat quam velit blanditiis quasi libero ullam placeat a inventore, quo cumque nulla tenetur excepturi? Enim obcaecati fugiat eos sunt suscipit fuga, ad expedita quis accusamus repellat laboriosam saepe nihil beatae quisquam vero magnam veniam vel dolore atque ratione sit. Culpa quam aut iusto libero aperiam nobis deserunt dolorum velit qui? Quod maxime eaque necessitatibus perferendis tenetur? Laboriosam expedita esse, iusto, facilis eius laborum eum doloribus ut, nulla explicabo ipsa recusandae odio corrupti architecto provident perferendis nemo non. Veniam incidunt aliquam numquam possimus aliquid quam earum, beatae quae reprehenderit. Ad quia vel a eius at sunt ipsam! Ut, provident? Voluptatem ullam unde odit debitis amet facere ut a pariatur iure maxime, perspiciatis laudantium ab repellendus? Dicta quaerat laboriosam excepturi voluptas sint dolorum quae eligendi, possimus ad dolorem tempora fuga nostrum corrupti amet optio maiores minima deleniti molestias, impedit inventore magnam! Dicta magnam pariatur voluptatum odio amet, nemo unde laborum blanditiis adipisci dolorem, placeat ducimus, saepe ullam modi corrupti odit! Minima, debitis tempora exercitationem veniam hic vero illum nobis quisquam doloribus optio dolores at fugiat pariatur doloremque rem possimus? Commodi voluptates dolore inventore temporibus quis debitis. Quasi impedit non deleniti fugiat nisi vero. Sequi possimus quae sunt non omnis voluptatem, placeat quod, nisi deleniti error dolorem nostrum quam reiciendis? Praesentium cupiditate animi sed magnam omnis qui tenetur dolorum provident dolor maiores itaque numquam, ipsa at nesciunt vero saepe ullam ipsam modi repellat eaque possimus nulla veniam vitae autem. Laboriosam officia magnam neque nemo quam odio dolorum alias tempore? Dicta non commodi sint quidem recusandae provident enim ipsam esse voluptates perferendis quam dolores molestias et repellendus, explicabo, facilis culpa maiores. Blanditiis veritatis alias officiis odit cum reiciendis suscipit similique deserunt! Quas nam iste maiores ex nulla, illo quod pariatur voluptatum vitae voluptate quasi veniam expedita cumque fugiat, eum rem repudiandae sapiente minus accusamus facilis, aliquam asperiores nihil mollitia! Explicabo officia vitae unde quisquam modi libero dignissimos quibusdam, totam, fugit iure voluptates quis laborum labore! Minima cum ad veniam quis aliquid quae culpa, nemo ipsam asperiores in. Deleniti, perferendis ex inventore porro rem dolore. Consectetur enim, dolorum nihil libero, repudiandae cumque nobis earum ducimus vel, excepturi voluptate odio voluptas minima error iusto. Fuga delectus maiores possimus minima dicta porro ex inventore quasi, id explicabo nemo necessitatibus excepturi mollitia. Tempora distinctio libero atque. Eaque beatae aliquam repellat velit accusamus nulla libero? Nemo voluptatem ut assumenda officia sapiente atque doloremque laudantium nostrum cumque, totam vitae a eos in, veniam nisi! Quia illum, alias dolorem nam quos expedita eius, reprehenderit laboriosam modi esse itaque nulla autem vero libero fugit quo! Perspiciatis eius ipsa itaque suscipit odio architecto perferendis, impedit, debitis quis ut unde illum molestias dolore explicabo ducimus necessitatibus iusto nihil. Cumque qui eveniet obcaecati doloribus. Architecto nulla ratione facere ipsum iste laboriosam praesentium a. Rem veniam vitae harum facere corporis, exercitationem necessitatibus! Voluptate incidunt modi provident cupiditate nemo? Sint ducimus magnam, culpa, repudiandae nesciunt saepe soluta rem iure animi dicta dolore laborum labore. Consequuntur reiciendis impedit iste laudantium commodi nisi deserunt necessitatibus. Facilis quae, totam itaque, dolore laborum reiciendis, voluptas incidunt explicabo ipsum consequuntur optio sunt! Ipsa eligendi quisquam quaerat ipsum, est commodi consequatur. Tempora provident repudiandae dolore quae saepe, sint quas, illum perferendis necessitatibus quis amet libero et aut minima mollitia vitae culpa laudantium eligendi soluta illo. Nobis, deserunt quas non fugit perspiciatis quis ad ullam dolore. Sint alias quas soluta ipsum, aut qui quis repellendus corporis numquam quae, quod deserunt in nam aliquam ab. </p>
             <br>
             </div>
+            <div class="comments-section">
+                <h2>Komentar</h2>
+                <div id="comments-container">
+                    <!-- Komentar akan ditampilkan di sini -->
+                </div>
+                <textarea id="comment-input" placeholder="Silahkan Tulis Komentar Anda"></textarea>
+                <button class="comment-button" onclick="postComment()">Post</button>
+            </div>
         </div>
-        <%- include('layout/script.ejs') %>
-   
-    
+
+        <script>
+            // Fungsi untuk mengirim komentar
+            function postComment() {
+                var commentInput = document.getElementById("comment-input");
+                var comment = commentInput.value.trim(); // Mengambil teks komentar dan menghapus spasi di awal dan akhir
         
+                if (comment !== "") {
+                    var commentContainer = document.getElementById("comments-container");
+        
+                    // Membuat elemen untuk menampilkan komentar baru
+                    var newCommentElement = document.createElement("div");
+                    newCommentElement.classList.add("comment");
+                    newCommentElement.innerText = comment;
+        
+                    // Menambahkan komentar baru ke dalam container komentar
+                    commentContainer.appendChild(newCommentElement);
+        
+                    // Mengosongkan textarea setelah komentar diposting
+                    commentInput.value = "";
+        
+                    // Opsional: Simpan komentar ke database atau penyimpanan lainnya
+                } else {
+                    alert("Please enter a comment before posting.");
+                }
+            }
+        </script>
+        
+        <%- include('layout/script.ejs') %>
     </body>
 </html>

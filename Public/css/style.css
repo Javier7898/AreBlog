@@ -218,3 +218,74 @@ header ul li{
     margin: 1%;
     float:left;
 }
+
+/* CSS untuk komentar */
+.comments-section {
+    margin-top: 0px;
+}
+
+.comments-section h2 {
+    font-family: "Calibri", sans-serif; /* Mengubah font family */
+    font-size: 36px; /* Mengubah ukuran font */
+    font-weight: bold; /* Mengubah tebal font */
+    color: #000000; /* Mengubah warna teks */
+    /* Tambahan gaya CSS lainnya */
+}
+
+#comments-container {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.comment {
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    text-align: left;
+}
+
+.comment:last-child {
+    margin-bottom: 0; /* Menghilangkan margin bawah pada komentar terakhir */
+}
+
+textarea {
+    width: calc(100% - 110px); /* Mengatur lebar textarea sehingga tombol masuk sejajar */
+    padding: 10px;
+    margin-top: 10px;
+    margin-right: 10px; /* Memberikan spasi antara textarea dan tombol */
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    display: inline-block; /* Membuat textarea tampil secara inline */
+    vertical-align: top; /* Mengatur posisi textarea ke atas */
+    resize: none; /* Mencegah pengguna untuk mengubah ukuran textarea */
+}
+
+.comment-button {
+    padding: 10px 20px;
+    margin-top: 22px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.comment-button:hover {
+    background-color: #0056b3;
+}
+
+/* Opsional: Mengatur ukuran font untuk komentar */
+.comment,
+textarea,
+.comment-button {
+    font-size: 16px;
+}
+
+/* Opsional: Mengatur spasi antar elemen */
+.comments-section > * {
+    margin-bottom: 20px;
+}

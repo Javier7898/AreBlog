@@ -31,7 +31,43 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit praesentium quia iure adipisci vitae quaerat alias impedit perferendis, aut quis quas hic tenetur et molestias unde aspernatur placeat ad. Tempore ipsam itaque, repudiandae, voluptatum molestias reprehenderit, magnam sit repellendus ratione fuga rem ea quasi blanditiis eius corrupti libero illo. Quo id exercitationem, modi quaerat velit rem commodi debitis nisi aperiam voluptates tempore possimus voluptatibus pariatur amet sapiente. Odio ab libero ratione maxime sit laboriosam, officiis expedita consectetur! Molestias optio voluptatum laudantium illum cupiditate, iure deserunt iusto, fugit quidem inventore corrupti incidunt? Eveniet voluptatibus voluptas consequatur, pariatur omnis impedit ad nulla quasi quaerat, iste minima ipsam! Nam, suscipit ad. Dolorum ipsam tenetur ducimus iure obcaecati unde placeat, error labore laborum excepturi adipisci voluptatibus! Nemo omnis aliquid necessitatibus eius fugit sequi voluptatum laborum. Quas dicta fugit ipsa dignissimos nam inventore ullam blanditiis quae delectus voluptate aliquid perspiciatis deserunt autem cupiditate deleniti, esse repellat officiis pariatur doloremque provident, ducimus est voluptas ad quis? Veritatis saepe ipsa, modi laudantium, nihil ipsam ipsum veniam laborum quo laboriosam fugit porro maiores. Pariatur nisi harum repudiandae deleniti expedita soluta rerum ut nam! Porro necessitatibus totam iure reiciendis. Cupiditate impedit perspiciatis, consectetur animi asperiores magnam eaque officia excepturi nisi assumenda vitae tenetur. Architecto distinctio explicabo suscipit harum provident illo fugit culpa sunt, ipsa sit eveniet. In soluta accusamus natus quam rerum. Nisi, corrupti eaque? Excepturi ad molestiae magni deserunt ipsam soluta? Delectus voluptatibus maiores esse repellat sapiente, error, tempore consequatur consequuntur atque debitis tempora, incidunt eum velit aspernatur.</p>
             <br>
             </div>
+            <div class="comments-section">
+                <h2>Komentar</h2>
+                <div id="comments-container">
+                    <!-- Komentar akan ditampilkan di sini -->
+                </div>
+                <textarea id="comment-input" placeholder="Silahkan Tulis Komentar Anda"></textarea>
+                <button class="comment-button" onclick="postComment()">Post</button>
+            </div>
         </div>
+
+        <script>
+            // Fungsi untuk mengirim komentar
+            function postComment() {
+                var commentInput = document.getElementById("comment-input");
+                var comment = commentInput.value.trim(); // Mengambil teks komentar dan menghapus spasi di awal dan akhir
+        
+                if (comment !== "") {
+                    var commentContainer = document.getElementById("comments-container");
+        
+                    // Membuat elemen untuk menampilkan komentar baru
+                    var newCommentElement = document.createElement("div");
+                    newCommentElement.classList.add("comment");
+                    newCommentElement.innerText = comment;
+        
+                    // Menambahkan komentar baru ke dalam container komentar
+                    commentContainer.appendChild(newCommentElement);
+        
+                    // Mengosongkan textarea setelah komentar diposting
+                    commentInput.value = "";
+        
+                    // Opsional: Simpan komentar ke database atau penyimpanan lainnya
+                } else {
+                    alert("Please enter a comment before posting.");
+                }
+            }
+        </script>
+        
         <%- include('layout/script.ejs') %> 
 </body>
 </html>

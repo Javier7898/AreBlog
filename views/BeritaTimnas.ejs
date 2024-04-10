@@ -21,7 +21,43 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio expedita fugiat alias dolores quae officiis voluptatem, adipisci consectetur labore magnam in, inventore sint quasi asperiores nemo exercitationem veritatis architecto provident tempore tenetur! Quas ipsa non voluptate? Sapiente, debitis? Eius dolore iusto culpa eum corrupti voluptas nesciunt voluptates beatae impedit error, earum maxime repudiandae, enim dolorem ipsum eveniet nulla quas reprehenderit expedita architecto? Provident, velit reprehenderit. Itaque sequi ullam corrupti recusandae exercitationem aliquam cum dolores deleniti totam, soluta qui eaque illum perferendis vel error perspiciatis.</p>
             <br>
             </div>
+            <div class="comments-section">
+                <h2>Komentar</h2>
+                <div id="comments-container">
+                    <!-- Komentar akan ditampilkan di sini -->
+                </div>
+                <textarea id="comment-input" placeholder="Silahkan Tulis Komentar Anda"></textarea>
+                <button class="comment-button" onclick="postComment()">Post</button>
+            </div>
         </div>
+
+        <script>
+            // Fungsi untuk mengirim komentar
+            function postComment() {
+                var commentInput = document.getElementById("comment-input");
+                var comment = commentInput.value.trim(); // Mengambil teks komentar dan menghapus spasi di awal dan akhir
+        
+                if (comment !== "") {
+                    var commentContainer = document.getElementById("comments-container");
+        
+                    // Membuat elemen untuk menampilkan komentar baru
+                    var newCommentElement = document.createElement("div");
+                    newCommentElement.classList.add("comment");
+                    newCommentElement.innerText = comment;
+        
+                    // Menambahkan komentar baru ke dalam container komentar
+                    commentContainer.appendChild(newCommentElement);
+        
+                    // Mengosongkan textarea setelah komentar diposting
+                    commentInput.value = "";
+        
+                    // Opsional: Simpan komentar ke database atau penyimpanan lainnya
+                } else {
+                    alert("Please enter a comment before posting.");
+                }
+            }
+        </script>
+        
         <%- include('layout/script.ejs') %>
     </body>
 </html>
