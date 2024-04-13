@@ -13,20 +13,30 @@ connect.then(() => {
 // Create Schema
 const Loginschema = new mongoose.Schema({
     name: {
-        type:String,
-        required: true
+        type: String,
+        required: true,
+        trim: true
     },
     password: {
         type: String,
-        required: true
+        required: true,
+        minlength: 6
     },
-    email:{
+    email: {
         type: String,
-        required: true
+        required: true,
+    },
+    role: {
+        type: String,
+        default: 'user', 
+        enum: ['user', 'admin'] 
     }
+}, {
+    timestamps: true 
 });
 
 // collection part
 const collection = new mongoose.model("users", Loginschema);
 
 module.exports = collection;
+

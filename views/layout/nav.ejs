@@ -1,14 +1,16 @@
 <nav>
     <label class="logo">AreBlog</label>
     <ul>
-        <li>
-            <a href="/">Home</a>
-            <span id="loginSpan">
-                <a href="Login">Login</a>
-            </span>
-            <span id="welcomeSpan" style="display:none;">
-                Welcome, <span id="welcomeMessage"></span>
-            </span> <!-- Ini untuk menampilkan pesan selamat datang -->
-        </li>
+        <li><a href="/">Beranda</a></li>
+        <% if (isAdmin) { %>
+            <li><a href="/dashboard">Dashboard Admin</a></li>
+        <% } %>
+        <% if (user) { %>
+            <li><p>welocme <%= user.name %></p></li>
+            <li><a href="/login">Logout</a></li>
+        <% } else { %>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Register</a></li>
+        <% } %>
     </ul>
 </nav>

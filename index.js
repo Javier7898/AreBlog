@@ -97,12 +97,26 @@ app.get('/Register', (req,res) => {
 app.get('/resetpas', (req,res) =>{
     res.render('resetpas')
 });
+
+app.get('/', (req, res) => {
+    // Periksa apakah pengguna saat ini masuk dan memiliki peran admin
+    const isAdmin = req.session.user && req.session.user.role === 'admin';
+
+    // Render halaman dengan variabel isAdmin
+    res.render('MenuUtama', {
+        title: 'Utama',
+        user: req.session.user,
+        isAdmin // Mengirimkan variabel isAdmin ke view
+    });
+});
+
 // Register User
 app.post("/Register", async (req, res) => {
     const data = {
         name: req.body.username,
         password: req.body.password,
-        email: req.body.email
+        email: req.body.email,
+        user: 'user'
     }
 
     try {
